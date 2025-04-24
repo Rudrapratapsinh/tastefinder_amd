@@ -64,11 +64,15 @@ View detailed cards with:
 🔍 Filters
 
 
+Filter by cuisine
+
+filter for budget: below 500, 500-1000, 1000-1500, 1500+(cost for two)
+
 Veg/Non-Veg Filter: Filter by vegetarian (TRUE) or non-vegetarian (FALSE).
 
 Area Filter: Select from 82 areas (e.g., Acher, Bodakdev) with a search button.
 
-Pagination: 16-20 restaurants per page with navigation.
+
 
 
 
