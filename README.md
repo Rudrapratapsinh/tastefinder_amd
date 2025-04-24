@@ -20,6 +20,8 @@
 
 🌟 Overview
 TasteFinder AMD is a modern web application designed to help users explore restaurants in Ahmedabad, India. Built with a custom dataset, it offers intuitive filtering, sorting, and personalization features. Whether you're looking for a vegetarian spot or want to sort by cost, TasteFinder has you covered! Originally developed on Lovable.dev, this project has been migrated for local hosting and further customization.
+
+
 📋 Table of Contents
 
 Features
@@ -33,39 +35,60 @@ Troubleshooting
 
 
 ✨ Features
+
+
 🍴 Restaurant Exploration
 
 Browse ~1000 restaurants in Ahmedabad.
+
 View detailed cards with:
+
 📛 Name
+
 📍 Area (82 unique areas)
+
 ⭐ Average rating (avgRating)
+
 🔢 Total ratings (totalRatingsString)
+
 🍲 Cuisines
+
 💸 Cost for two (costForTwoStrings)
+
 🏠 Address
+
 🥗 Vegetarian status (veg)
 
 
 
 🔍 Filters
 
+
 Veg/Non-Veg Filter: Filter by vegetarian (TRUE) or non-vegetarian (FALSE).
+
 Area Filter: Select from 82 areas (e.g., Acher, Bodakdev) with a search button.
+
 Pagination: 16-20 restaurants per page with navigation.
+
+
 
 📊 Sorting
 
 Sort by:
+
 💰 Cost for Two (costForTwoStrings, ascending/descending)
+
 🌟 Average Rating (avgRating, descending)
 
 
-🚫 Removed “Sort by Name” for a streamlined experience.
+
+
 
 👤 User Profile
 
+
 Reviews: Manage your restaurant ratings.
+
 Favorites: Save and view your favorite spots.
 
 ♿ Accessibility
@@ -77,52 +100,6 @@ Built with screen reader support and keyboard navigation.
 The app uses ahmedabad_restaurants.csv, a dataset with ~1000 rows of restaurant data for Ahmedabad, sourced from a Google Sheets export and parsed with papaparse.
 Dataset Fields
 
-
-
-Field
-Description
-Example
-
-
-
-name
-Restaurant name
-"The Green House"
-
-
-area
-Location area in Ahmedabad
-"Bodakdev"
-
-
-avgRating
-Average rating (out of 5)
-4.2
-
-
-totalRatingsString
-Total number of ratings
-"1,200 ratings"
-
-
-cuisines
-Types of cuisines offered
-"North Indian, Chinese"
-
-
-costForTwoStrings
-Estimated cost for two people
-"₹800 for two"
-
-
-address
-Full address of the restaurant
-"123, Sindhu Bhavan Road"
-
-
-veg
-Vegetarian status (TRUE/FALSE)
-TRUE
 
 
 
@@ -222,16 +199,4 @@ Veg Filter Issues:
 Verify veg column in ahmedabad_restaurants.csv uses TRUE/FALSE.
 Check csvLoader.ts for parsing errors.
 Test filter: fetch('/api/restaurants?veg=TRUE').
-
-
-Port Conflicts:
-Change PORT in .env and server.js (e.g., to 8010).
-Update vite.config.ts for frontend (e.g., to 8011).
-
-
-CSV Loading:
-Ensure ahmedabad_restaurants.csv is in public/.
-Check browser console for errors.
-
-
 
