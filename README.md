@@ -1,8 +1,26 @@
-TasteFinder 
+
+  
 
 
-TasteFinder is a web application built to help users explore restaurants in Ahmedabad, India, using a custom dataset. The app provides a user-friendly interface to filter, sort, and personalize restaurant recommendations, with features like veg/non-veg filtering, area-based search, and user profiles for managing reviews and favorites. This project was initially developed on Lovable.dev and later migrated to GitHub for local hosting and further development.
-Table of Contents
+🍽️ TasteFinder Ahmedabad
+
+
+  Discover the best restaurants in Ahmedabad with ease!
+  A sleek web app to explore, filter, and personalize your dining experience.
+  View on GitHub
+
+
+
+  
+  
+  
+  
+
+
+
+🌟 Overview
+TasteFinder AMD is a modern web application designed to help users explore restaurants in Ahmedabad, India. Built with a custom dataset, it offers intuitive filtering, sorting, and personalization features. Whether you're looking for a vegetarian spot or want to sort by cost, TasteFinder has you covered! Originally developed on Lovable.dev, this project has been migrated for local hosting and further customization.
+📋 Table of Contents
 
 Features
 Dataset
@@ -10,50 +28,53 @@ Prerequisites
 Setup and Running Locally
 Project Structure
 Development Notes
+Screenshots
 Troubleshooting
 
-Features
-Restaurant Exploration
 
-Browse a curated list of ~1000 restaurants in Ahmedabad.
-View detailed restaurant cards with:
-Name
-Area (from 82 unique areas)
-Average rating (avgRating)
-Total ratings (totalRatingsString)
-Cuisines
-Cost for two (costForTwoStrings)
-Address
-Vegetarian status (veg)
+✨ Features
+🍴 Restaurant Exploration
 
-
-
-Filters
-
-Veg/Non-Veg Filter: Filter restaurants by vegetarian (TRUE) or non-vegetarian (FALSE) status, based on the veg column in the dataset.
-Area Filter: Select from 82 unique areas in Ahmedabad (e.g., Acher, Ambavadi, Bodakdev) with a search button for quick navigation.
-Pagination: Display 16-20 restaurants per page with navigation controls.
-
-Sorting
-
-Sort restaurants by:
-Cost for Two: Ascending or descending (costForTwoStrings).
-Average Rating: Descending (avgRating).
+Browse ~1000 restaurants in Ahmedabad.
+View detailed cards with:
+📛 Name
+📍 Area (82 unique areas)
+⭐ Average rating (avgRating)
+🔢 Total ratings (totalRatingsString)
+🍲 Cuisines
+💸 Cost for two (costForTwoStrings)
+🏠 Address
+🥗 Vegetarian status (veg)
 
 
-Note: “Sort by Name” was intentionally removed to streamline the user experience.
 
-User Profile
+🔍 Filters
 
-Reviews: View and manage your ratings for restaurants.
-Favorites: Save and view your favorite restaurants.
+Veg/Non-Veg Filter: Filter by vegetarian (TRUE) or non-vegetarian (FALSE).
+Area Filter: Select from 82 areas (e.g., Acher, Bodakdev) with a search button.
+Pagination: 16-20 restaurants per page with navigation.
 
-Accessibility
+📊 Sorting
 
-Designed with accessibility in mind, ensuring compatibility with screen readers and keyboard navigation.
+Sort by:
+💰 Cost for Two (costForTwoStrings, ascending/descending)
+🌟 Average Rating (avgRating, descending)
 
-Dataset
-The app uses a custom dataset (ahmedabad_restaurants.csv) sourced from a Google Sheets export, containing ~1000 rows of restaurant data for Ahmedabad. The dataset is parsed locally using the papaparse library.
+
+🚫 Removed “Sort by Name” for a streamlined experience.
+
+👤 User Profile
+
+Reviews: Manage your restaurant ratings.
+Favorites: Save and view your favorite spots.
+
+♿ Accessibility
+
+Built with screen reader support and keyboard navigation.
+
+
+📊 Dataset
+The app uses ahmedabad_restaurants.csv, a dataset with ~1000 rows of restaurant data for Ahmedabad, sourced from a Google Sheets export and parsed with papaparse.
 Dataset Fields
 
 
@@ -104,104 +125,113 @@ Vegetarian status (TRUE/FALSE)
 TRUE
 
 
-Prerequisites
 
-Node.js: Version 16 or higher (check with node -v).
-SQLite: For storing user data (reviews, favorites).
-VS Code: Recommended for development and local hosting.
-Git: For cloning the repository (check with git --version).
+🛠️ Prerequisites
 
-Setup and Running Locally
+Node.js: v16+ (node -v to check)
+SQLite: For user data storage
+VS Code: Recommended for development
+Git: For cloning the repo (git --version to check)
+
+
+🚀 Setup and Running Locally
 1. Clone the Repository
-Clone the repo to your local machine:
 git clone https://github.com/Rudrapratapsinh/tastefinder_amd.git
 cd tastefinder_amd
 
 2. Install Dependencies
-Install all required Node.js packages:
 npm install
 
 3. Set Up Environment Variables
-Create a .env file in the root directory with the following:
+Create a .env file in the root:
 PORT=8008
 DATABASE_URL=sqlite:./database.db
 
-
-PORT: Sets the port for the backend server.
-DATABASE_URL: Points to the SQLite database file for user data.
-
 4. Initialize the Database (Optional)
-If database.db doesn’t exist, create it and set up the tables:
+If database.db doesn’t exist:
 
-Open a terminal and run:sqlite3 database.db
+Run:sqlite3 database.db
 
 
 Create tables:CREATE TABLE user_reviews (user_id TEXT, restaurant_id TEXT, rating INTEGER);
 CREATE TABLE user_favorites (user_id TEXT, restaurant_id TEXT);
 
 
-Add test data (optional):INSERT INTO user_reviews (user_id, restaurant_id, rating) VALUES ('user1', 'rest1', 4);
+Add test data:INSERT INTO user_reviews (user_id, restaurant_id, rating) VALUES ('user1', 'rest1', 4);
 INSERT INTO user_favorites (user_id, restaurant_id) VALUES ('user1', 'rest2');
 
 
 
 5. Run the Backend
-Start the Node.js backend server:
+Start the Node.js server:
 npm run start
 
-Or, if the start script isn’t defined in package.json:
+Or:
 node server/server.js
 
 
-The backend will run on http://localhost:8008.
+Runs on http://localhost:8008.
 
 6. Run the Frontend
 Start the React frontend:
 npm run dev
 
 
-The frontend will run on http://localhost:8009 (configured in vite.config.ts to avoid conflict with the backend).
-Access the app in your browser at http://localhost:8009.
-
-Project Structure
-
-src/: Frontend React code.
-ExploreRestaurants.tsx: Main component for browsing restaurants.
-Profile.tsx: User profile with reviews.
-Favorites.tsx: Displays favorited restaurants.
-csvLoader.ts: Utility for parsing the CSV dataset.
+Runs on http://localhost:8009 (set in vite.config.ts to avoid conflicts).
 
 
-server/: Backend Node.js code.
-server.js: Express server handling API endpoints and SQLite database.
+📁 Project Structure
+
+src/: React frontend code
+ExploreRestaurants.tsx: Browse restaurants
+Profile.tsx: User reviews
+Favorites.tsx: Favorite restaurants
+csvLoader.ts: CSV parsing utility
 
 
-public/: Static assets (e.g., ahmedabad_restaurants.csv).
-database.db: SQLite database for user data.
-.env: Environment variables for configuration.
+server/: Node.js backend
+server.js: Express server with API endpoints
 
-Development Notes
 
-This project was originally developed on Lovable.dev, a low-code platform, and later exported to GitHub for local hosting and further customization.
-The lovable-dev[bot] contributions were removed by exporting the files to this new repository, ensuring a clean commit history.
-The app is designed for local hosting but can be deployed to platforms like Cloudflare Pages or Netlify for free hosting with a custom domain.
+public/: Static assets (e.g., ahmedabad_restaurants.csv)
+database.db: SQLite database
+.env: Environment variables
 
-Troubleshooting
+
+📝 Development Notes
+
+Originally built on Lovable.dev, a low-code platform.
+Migrated to GitHub, with lovable-dev[bot] contributions removed for a clean history.
+Designed for local hosting; can be deployed to Cloudflare Pages or Netlify for free hosting.
+
+
+📸 Screenshots
+Explore the app’s interface:
+Browse restaurants with filters and sorting.
+Manage your reviews and favorites.
+
+🐞 Troubleshooting
 
 Reviews/Favorites Not Showing:
-Ensure database.db exists and has user_reviews and user_favorites tables.
-Verify backend endpoints (/api/user/reviews, /api/user/favorites) are working by testing with curl http://localhost:8008/api/user/reviews.
-Add test data to the database if empty (see Setup step 4).
+Ensure database.db has user_reviews and user_favorites tables.
+Test API endpoints: curl http://localhost:8008/api/user/reviews.
+Add test data if empty (see Setup step 4).
 
 
-Veg Filter Not Working:
-Confirm veg column in ahmedabad_restaurants.csv uses TRUE/FALSE.
-Check csvLoader.ts for correct parsing of the veg field.
-Test the filter API call: fetch('/api/restaurants?veg=TRUE').
+Veg Filter Issues:
+Verify veg column in ahmedabad_restaurants.csv uses TRUE/FALSE.
+Check csvLoader.ts for parsing errors.
+Test filter: fetch('/api/restaurants?veg=TRUE').
 
 
+Port Conflicts:
+Change PORT in .env and server.js (e.g., to 8010).
+Update vite.config.ts for frontend (e.g., to 8011).
 
 
+CSV Loading:
+Ensure ahmedabad_restaurants.csv is in public/.
+Check browser console for errors.
 
 
 
