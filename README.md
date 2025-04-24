@@ -1,5 +1,7 @@
-TasteFinder AMD
-TasteFinder AMD is a web application built to help users explore restaurants in Ahmedabad, India, using a custom dataset. The app provides a user-friendly interface to filter, sort, and personalize restaurant recommendations, with features like veg/non-veg filtering, area-based search, and user profiles for managing reviews and favorites. This project was initially developed on Lovable.dev and later migrated to GitHub for local hosting and further development.
+TasteFinder 
+
+
+TasteFinder is a web application built to help users explore restaurants in Ahmedabad, India, using a custom dataset. The app provides a user-friendly interface to filter, sort, and personalize restaurant recommendations, with features like veg/non-veg filtering, area-based search, and user profiles for managing reviews and favorites. This project was initially developed on Lovable.dev and later migrated to GitHub for local hosting and further development.
 Table of Contents
 
 Features
